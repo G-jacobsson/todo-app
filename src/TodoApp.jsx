@@ -3,20 +3,29 @@ import TodoList from './components/TodoList';
 import { getTodos } from './services/todoService';
 
 const TodoApp = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem('todos') || '[]')
+  );
 
   useEffect(() => {
     const fetchTodos = async () => {
-      try {
-        const data = await getTodos();
-        setTodos(data);
-      } catch (error) {
-        console.error(error);
+      if (!localStorage.getItem('todos')) {
+        try {
+          const data = await getTodos();
+          setTodos(data);
+          localStorage.setItem('todos', JSON.stringify(data));
+        } catch (error) {
+          throw new Error('Error fetching todos');
+        }
       }
     };
 
     fetchTodos();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <>

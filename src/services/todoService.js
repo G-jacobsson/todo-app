@@ -17,8 +17,8 @@ export const getTodos = async () => {
         apikey: await axios.get(
           'https://random-todos.azurewebsites.net/keys?email=geo.jacobsson%40gmail.com'
         ),
-        amount: 5,
-        randomdone: true,
+        amount: 6,
+        randomdone: false,
       },
     }
   );
