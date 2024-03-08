@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import TodoList from './components/TodoList';
 import { getTodos } from './services/todoService';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
 
-  const handleGetTodos = async () => {
-    try {
-      const data = await getTodos();
-      setTodos(data);
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-      return [];
-    }
-  };
+  useEffect(() => {
+    const fetchTodos = async () => {
+      try {
+        const data = await getTodos();
+        setTodos(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchTodos();
+  }, []);
 
   return (
-    <div>
-      <h1>Todo List</h1>
-      <button onClick={handleGetTodos}>Get Todos</button>
-    </div>
+    <>
+      <TodoList todos={todos} />
+    </>
   );
 };
 
