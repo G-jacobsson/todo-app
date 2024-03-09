@@ -5,7 +5,7 @@ const TodoItem = ({ todo, className }) => {
     <>
       <li
         className={`${className} text-start m-4 ${
-          todo.done ? 'line-through italic' : ''
+          todo.done ? 'line-through italic text-slate-400' : ''
         }`}
         key={todo.id}
       >
