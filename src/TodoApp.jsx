@@ -34,6 +34,7 @@ const TodoApp = () => {
         <img
           src="/logoTodoApp.png"
           className="top-0 absolute"
+          alt="logo"
         />
         <TodoForm todos={todos} />
         <TodoList todos={todos} />
