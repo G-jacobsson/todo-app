@@ -9,7 +9,6 @@ const TodoItem = ({ todo, className, toggleTodo, deleteTodo }) => {
         className={`${className} group m-4 p-2 rounded-lg flex justify-between items-start border-cyan-950 border-2`}
       >
         <div className="w-fit flex justify-between items-center">
-          {/* Task Text from the start */}
           <TbPointFilled />
           <span
             className={`flex-grow ${
@@ -19,9 +18,8 @@ const TodoItem = ({ todo, className, toggleTodo, deleteTodo }) => {
             {todo.task}
           </span>
 
-          {/* Delete Icon aligned to the right */}
           <MdClose
-            className="cursor-pointer text-lg opacity-100 ml-4" // Ensure visibility and spacing
+            className="cursor-pointer text-lg opacity-100 ml-4"
             onClick={() => deleteTodo(todo.id)}
           />
         </div>
@@ -43,7 +41,7 @@ const TodoItem = ({ todo, className, toggleTodo, deleteTodo }) => {
               : 'text-cyan-500 font-bold text-sm'
           }`}
         >
-          {todo.done ? 'Done' : 'Not Done'}
+          {todo.done ? 'Done' : 'Done'}
         </label>
       </fieldset>
     </>
