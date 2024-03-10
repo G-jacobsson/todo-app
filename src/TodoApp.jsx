@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import { getTodos } from './services/todoService';
 import TodoForm from './components/TodoForm';
+import { Todo } from './models/Todo';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState(
@@ -29,6 +30,14 @@ const TodoApp = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
+  const addTodo = (newTodo) => {
+    const todoToAdd = new Todo(Date.now(), newTodo, false);
+    console.log(todoToAdd);
+    setTodos([...todos, todoToAdd]);
+  };
+
+  console.log(todos);
+
   return (
     <>
       <div className="w-[100vw] bg-slate-500 h-[100vh] flex flex-col text-center items-center justify-center p-3">
@@ -37,7 +46,7 @@ const TodoApp = () => {
           className="top-0 absolute"
           alt="logo"
         />
-        <TodoForm todos={todos} />
+        <TodoForm addNewTodo={addTodo} />
         <TodoList todos={todos} />
       </div>
     </>
