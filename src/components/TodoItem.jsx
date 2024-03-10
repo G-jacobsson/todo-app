@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoItem = ({ todo, className }) => {
+const TodoItem = ({ todo, className, toggleTodo }) => {
   return (
     <>
       <li
@@ -11,15 +11,24 @@ const TodoItem = ({ todo, className }) => {
       >
         {todo.task}
 
-        {/* <input
-              type="checkbox"
-              id={`done-${todo.id}`}
-              checked={todo.done}
-              readOnly
-            />
-            <label htmlFor={`done-${todo.id}`}>
-              {todo.done ? 'Done' : 'Not Done'}
-            </label> */}
+        <fieldset>
+          <input
+            type="checkbox"
+            id={`done-${todo.id}`}
+            checked={todo.done}
+            onChange={() => toggleTodo(todo.id)}
+          />
+          <label
+            htmlFor={`done-${todo.id}`}
+            className={`ml-2 ${
+              todo.done
+                ? 'text-slate-400 italic text-sm'
+                : 'text-cyan-500 font-bold text-sm'
+            }`}
+          >
+            {todo.done ? 'Done' : 'Not Done'}
+          </label>
+        </fieldset>
       </li>
     </>
   );

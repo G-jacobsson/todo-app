@@ -30,24 +30,34 @@ const TodoApp = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
-  const addTodo = (newTodo) => {
-    const todoToAdd = new Todo(Date.now(), newTodo, false);
-    console.log(todoToAdd);
-    setTodos([...todos, todoToAdd]);
+  const toggleTodo = (id) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, done: !todo.done };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
   };
 
-  console.log(todos);
+  const addTodo = (newTodo) => {
+    const todoToAdd = new Todo(Date.now(), newTodo, false);
+    setTodos([...todos, todoToAdd]);
+  };
 
   return (
     <>
       <div className="w-[100vw] bg-slate-500 h-[100vh] flex flex-col text-center items-center justify-center p-3">
         <img
           src="/logoTodoApp.png"
-          className="top-0 absolute"
+          className="mb-20"
           alt="logo"
         />
         <TodoForm addNewTodo={addTodo} />
-        <TodoList todos={todos} />
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+        />
       </div>
     </>
   );
