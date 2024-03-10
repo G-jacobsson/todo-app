@@ -13,6 +13,7 @@ const TodoApp = () => {
       if (!localStorage.getItem('todos')) {
         try {
           const data = await getTodos();
+          console.log(data);
           setTodos(data);
           localStorage.setItem('todos', JSON.stringify(data));
         } catch (error) {
