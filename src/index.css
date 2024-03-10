@@ -11,3 +11,7 @@
   box-sizing: border-box;
   color: #efefef;
 }
+
+body {
+  background-color: #64748b;
+}

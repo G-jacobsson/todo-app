@@ -45,9 +45,13 @@ const TodoApp = () => {
     setTodos([...todos, todoToAdd]);
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <>
-      <div className="w-[100vw] bg-slate-500 h-[100vh] flex flex-col text-center items-center justify-center p-3">
+      <div className="w-[100vw] h-[100vh] flex flex-col text-center items-center justify-center p-3">
         <img
           src="/logoTodoApp.png"
           className="mb-20"
@@ -57,6 +61,7 @@ const TodoApp = () => {
         <TodoList
           todos={todos}
           toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
         />
       </div>
     </>
