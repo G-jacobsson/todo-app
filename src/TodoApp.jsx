@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import { getTodos } from './services/todoService';
+import TodoForm from './components/TodoForm';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState(
@@ -29,7 +30,14 @@ const TodoApp = () => {
 
   return (
     <>
-      <TodoList todos={todos} />
+      <div className="w-[100vw] bg-slate-500 h-[100vh] flex flex-col text-center items-center justify-center p-3">
+        <img
+          src="/logoTodoApp.png"
+          className="top-0 absolute"
+        />
+        <TodoForm todos={todos} />
+        <TodoList todos={todos} />
+      </div>
     </>
   );
 };
