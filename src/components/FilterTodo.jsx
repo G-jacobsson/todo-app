@@ -2,8 +2,8 @@ import React from 'react';
 
 const FilterTodo = ({ setFilter, filter }) => {
   const buttonActive = (filterName) => {
-    return `p-2 mx-1.5 bg-transparent border-2 border-cyan-950 rounded hover:shadow-lg transition-all ease-in-out duration-300 active:bg-slate-600 active:text-white ${
-      filter === filterName ? 'bg-cyan-950 text-white' : ''
+    return `p-2 mx-1.5 bg-transparent border-2 border-cyan-950 rounded transition-all ease-in-out duration-300 text-black ${
+      filter === filterName ? 'text-white bg-cyan-950' : 'hover:shadow-lg'
     }`;
   };
 
