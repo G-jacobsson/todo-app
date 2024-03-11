@@ -60,10 +60,10 @@ const TodoApp = () => {
 
   return (
     <>
-      <div className="w-[100vw] h-[100vh] flex flex-col text-center items-center justify-center p-3">
+      <div className="w-[100vw] min-h-[100vh] flex flex-col text-center items-center justify-start p-3">
         <img
           src="/logoTodoApp.png"
-          className="mb-20"
+          className="mt-20 mb-20"
           alt="logo"
         />
         <TodoForm addNewTodo={addTodo} />
