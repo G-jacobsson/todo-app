@@ -3,11 +3,13 @@ import TodoList from './components/TodoList';
 import { getTodos } from './services/todoService';
 import TodoForm from './components/TodoForm';
 import { Todo } from './models/Todo';
+import FilterTodo from './components/FilterTodo';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState(
     JSON.parse(localStorage.getItem('todos') || '[]')
   );
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -49,6 +51,13 @@ const TodoApp = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  let filteredTodos = todos;
+  if (filter === 'done') {
+    filteredTodos = todos.filter((todo) => todo.done);
+  } else if (filter === 'not done') {
+    filteredTodos = todos.filter((todo) => !todo.done);
+  }
+
   return (
     <>
       <div className="w-[100vw] h-[100vh] flex flex-col text-center items-center justify-center p-3">
@@ -58,8 +67,12 @@ const TodoApp = () => {
           alt="logo"
         />
         <TodoForm addNewTodo={addTodo} />
+        <FilterTodo
+          filter={filter}
+          setFilter={setFilter}
+        />
         <TodoList
-          todos={todos}
+          todos={filteredTodos}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
         />
