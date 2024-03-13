@@ -1,34 +1,59 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/gKtMps5t)
-# Todos
+# Todo App
 
-En inlämningsuppgift för BCU. I denna uppgift skall ni alltså bygga en todo-lista i react. Ni har fått detta projekt som mall så att alla har någonting att utgå ifrån. Men, ingenting mer än själva projektet har gjorts. Nu skall ni, genom att använda alla koncept vi har pratat om hittills i kursen, skapa en todo-lista.
+## Introduction
 
-## API
+This Todo application is a simple yet powerful tool designed to help you manage your daily tasks with ease. Built with React, it features a sleek, user-friendly interface that allows for easy tracking of your todo items. Whether you need to add a new task, mark a task as done, or delete an unnecessary item, this application has got you covered.
 
-För att ni skall träna lite extra på att använda api:er kommer ni att använda er av följande api: https://random-todos.azurewebsites.net/api-docs/
+## Getting started
 
-### Api key
+To get started with the Todo application, you'll need to clone the repository and install the necessary dependencies.
 
-Api:t ovanför kräver att ni har en api-nyckel. Ni kan prova att göra era egna anrop genom att titta på dokumentationen till api:t. Eller om ni vill fokusera på uppgiften så finns det här en länk där ni kan skriva in er e-postadress för att få en api-nyckel eller hämta en glömd nyckel: https://sebastiantegel.github.io/random-todos-keys/
+### Prerequisites
 
-## Krav för G
+- Node.js installed on your system.
 
-- Skapa en hårdkodad lista med egna todos (Ni får denna från api:t)
-- Presentera listan på skärmen med kontroll, kanske med hjälp av en ul/li
-- Ni skall kunna ta bort en todo ur listan
-- Ni behöver använda minst en komponent
-- Använda localStorage för att spara er lista. Jag vill inte att allting börjar om från början varje siduppdatering :)
-- Bra struktur på er kod. Detta betyder självförklarande variabelnamn och funktionsnamn samt inga kommentarer.
+### Installation
 
-## Krav för VG
+1. Clone the repository:
 
-- Samtliga punkter för G
-- Ni använder er av minst tre komponenter
-- Ni använder er av Lifting State Up
-- Ni skall kunna skriva in egna todos
-- Ni skall visa även klara händelser och kunna göra så att de blir "oklara" igen
-- Ni skall kunna sortera er lista på något sätt, hur och på vad är upp till er
+```bash
+git clone <https://github.com/G-jacobsson/todo-app>
+```
 
-## Förslag
+2. Navigate to the project directory:
 
-Mitt förslag är att ni funderar över vilket betyg ni vill uppnå och börjar planera för de komponenter som behövs för just det. Fokusera på funktionalitet framför utseende. Såklart att ni får styla hur mycket ni vill, men det är funktionalitet jag kommer att bedöma i denna uppgift. 
+```bash
+cd <todo-app>
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the application:
+
+```bash
+npm start
+```
+
+This will launch the Todo App on 'localhost:3000' in your web browser.
+
+## Features
+
+The Todo App offers the following features:
+
+- **View Todos**: A random set of tasks are displayed the first time you use the application. In a single view, allowing you to quickly scan through pending and completed items.
+- **Add Todo**: Easily add new tasks to your list by typing in the task name and clicking the "Add Todo" button. Your new task will appear in the todo list.
+- **Delete Todo**: Remove tasks that are no longer needed by clicking the delete icon next to the task you wish to remove.
+- **Toggle Todo Status**: Mark tasks as done or not done by clicking the checkbox. This action toggles the task's status, moving it between completed and pending states.
+- **Filter Todos**: Filter your tasks based on their status (all, done, not done) to focus on what's important at the moment.
+
+## How to use
+
+Using the Todo App is straightforward:
+
+1. **Add a Task**: Start by adding a new task using the input field at the top of the application. Press enter or click the "Add Todo" button to submit.
+2. **Manage Tasks**: Use the icons next to each task to delete it or mark it as done. Filter your view to see all tasks, only completed tasks, or tasks that are still pending.
+3. **Stay Organized**: Keep adding, editing, and organizing your tasks to stay on top of your to-do list.
