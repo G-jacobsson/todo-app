@@ -17,13 +17,13 @@ To get started with the Todo application, you'll need to clone the repository an
 1. Clone the repository:
 
 ```bash
-git clone <https://github.com/G-jacobsson/todo-app>
+git clone https://github.com/G-jacobsson/todo-app
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd <todo-app>
+cd todo-app
 ```
 
 3. Install dependencies:
