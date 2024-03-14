@@ -3,7 +3,7 @@ import React from 'react';
 const FilterTodo = ({ setFilter, filter }) => {
   const buttonActive = (filterName) => {
     return `p-2 mx-1.5 bg-transparent border-2 border-cyan-950 rounded transition-all ease-in-out duration-300 text-black ${
-      filter === filterName ? 'bg-cyan-800 text-white' : 'hover:shadow-lg'
+      filter === filterName ? 'bg-cyan-600 text-white' : 'hover:shadow-lg'
     }`;
   };
 
