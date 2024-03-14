@@ -23,6 +23,7 @@ const TodoForm = ({ addNewTodo }) => {
         onSubmit={handleSubmit}
       >
         <input
+          name="newTodo"
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
@@ -37,6 +38,7 @@ const TodoForm = ({ addNewTodo }) => {
           Priority:{' '}
         </label>
         <select
+          id="priority"
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
           className="p-2 mr-4 text-black border-2 rounded shadow-2xl border-cyan-300"
