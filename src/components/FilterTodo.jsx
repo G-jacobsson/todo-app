@@ -9,7 +9,8 @@ const FilterTodo = ({ setFilter, filter }) => {
 
   return (
     <>
-      <div className="my-4">
+      <h2 className="text-2xl font-bold text-cyan-500">Filter Todos</h2>
+      <div className="mt-4">
         <button
           onClick={() => setFilter('all')}
           className={buttonActive('all')}
@@ -27,6 +28,27 @@ const FilterTodo = ({ setFilter, filter }) => {
           className={buttonActive('not done')}
         >
           Not Done
+        </button>
+      </div>
+      <br />
+      <div className="mb-8">
+        <button
+          onClick={() => setFilter('high')}
+          className={buttonActive('high')}
+        >
+          High Priority
+        </button>
+        <button
+          onClick={() => setFilter('medium')}
+          className={buttonActive('medium')}
+        >
+          Medium Priority
+        </button>
+        <button
+          onClick={() => setFilter('low')}
+          className={buttonActive('low')}
+        >
+          Low Priority
         </button>
       </div>
     </>

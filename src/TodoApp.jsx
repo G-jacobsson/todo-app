@@ -52,10 +52,27 @@ const TodoApp = () => {
   };
 
   let filteredTodos = todos;
-  if (filter === 'done') {
-    filteredTodos = todos.filter((todo) => todo.done);
-  } else if (filter === 'not done') {
-    filteredTodos = todos.filter((todo) => !todo.done);
+
+  switch (filter) {
+    case 'done':
+      filteredTodos = todos.filter((todo) => todo.done);
+      break;
+    case 'not done':
+      filteredTodos = todos.filter((todo) => !todo.done);
+      break;
+    case 'high':
+      filteredTodos = todos.filter((todo) => todo.priority === 'high');
+      break;
+    case 'medium':
+      filteredTodos = todos.filter((todo) => todo.priority === 'medium');
+      break;
+    case 'low':
+      filteredTodos = todos.filter((todo) => todo.priority === 'low');
+      break;
+    case 'all':
+    default:
+      filteredTodos = todos;
+      break;
   }
 
   return (
