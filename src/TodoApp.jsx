@@ -42,8 +42,8 @@ const TodoApp = () => {
     setTodos(updatedTodos);
   };
 
-  const addTodo = (newTodo) => {
-    const todoToAdd = new Todo(Date.now(), newTodo, false);
+  const addTodo = (newTodo, priority) => {
+    const todoToAdd = new Todo(Date.now(), newTodo, false, priority);
     setTodos([...todos, todoToAdd]);
   };
 

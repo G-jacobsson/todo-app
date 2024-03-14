@@ -6,20 +6,22 @@ const TodoItem = ({ todo, className, toggleTodo, deleteTodo }) => {
   return (
     <>
       <li
-        className={`${className} group m-4 p-2 rounded-lg flex justify-between items-start border-cyan-950 border-2`}
+        className={`${className} group m-4 p-2 rounded-lg flex justify-between bg-slate-600 items-start border-cyan-950 border-2`}
       >
-        <div className="w-fit flex justify-between items-center">
+        <div className="flex items-center justify-between w-fit">
           <TbPointFilled />
           <span
             className={`flex-grow ${
               todo.done ? 'line-through italic text-slate-400' : ''
-            }`}
+            } ${todo.priority === 'high' ? 'text-red-400' : ''} ${
+              todo.priority === 'medium' ? 'text-yellow-500' : ''
+            } ${todo.priority === 'low' ? 'text-green-500' : ''}`}
           >
-            {todo.task}
+            {todo.task} ({todo.priority} priority)
           </span>
 
           <MdClose
-            className="cursor-pointer text-lg opacity-100 ml-4"
+            className="ml-4 text-lg opacity-100 cursor-pointer"
             onClick={() => deleteTodo(todo.id)}
           />
         </div>
